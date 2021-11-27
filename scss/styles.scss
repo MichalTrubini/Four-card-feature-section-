@@ -106,8 +106,15 @@ body {
 
 @media (min-width:1170px) {
 
+  body {
+    display: flex;
+    height: 100vh;
+  }
+
   .main {
-    max-width:144.7rem;
+    max-width:110rem;
+    padding:0;
+    margin:auto;
   }
 
   .intro {
@@ -123,27 +130,50 @@ body {
       margin-bottom:0.2rem;
     }
 
-    &__paragraph {
-      margin-top:1.3rem;
+    &__subheading {
+      letter-spacing: 0.25px;
     }
+
   }
 
   .cards {
-    @include flexCenter(row);
-      
-      &__column {
-        display:flex;
-        flex-direction: column;
-        max-width:30%;
-      }
 
-      &__column:nth-child(2) {
-        align-items: center;
-      }
-  }
+    display:grid;
+    grid-template-areas:
+    'cardOne cardTwo cardFour'
+    'cardOne cardThree cardFour';
+    gap:3rem;
 
-  .pull-right {
-    align-self: flex-end;
+    &__card-one {
+      grid-area: cardOne;
+    }
+    
+    &__card-two {
+      grid-area: cardTwo;
+    }
+    
+    &__card-three {
+      grid-area: cardThree;
+    }
+    
+    &__card-four {
+      grid-area: cardFour;
+    }
+
+    &__card {
+      width: 35rem;
+      margin-bottom: 0;
+      padding:3.2rem;
+    }
+
+    &__paragraph {
+      margin:0.6rem 0 4rem;
+    }
+
+    &__icon {
+      width: 64px;
+    }
+
   }
 
 }

@@ -146,8 +146,16 @@ body {
 }
 
 @media (min-width: 1170px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+  }
   .main {
-    max-width: 144.7rem;
+    max-width: 110rem;
+    padding: 0;
+    margin: auto;
   }
   .intro {
     width: 54rem;
@@ -160,42 +168,47 @@ body {
   .intro__heading {
     margin-bottom: 0.2rem;
   }
-  .intro__paragraph {
-    margin-top: 1.3rem;
+  .intro__subheading {
+    letter-spacing: 0.25px;
   }
   .cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'cardOne cardTwo cardFour' 'cardOne cardThree cardFour';
+    gap: 3rem;
   }
-  .cards__column {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    max-width: 30%;
+  .cards__card-one {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: cardOne;
   }
-  .cards__column:nth-child(2) {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  .cards__card-two {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: cardTwo;
   }
-  .pull-right {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+  .cards__card-three {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: cardThree;
+  }
+  .cards__card-four {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    grid-area: cardFour;
+  }
+  .cards__card {
+    width: 35rem;
+    margin-bottom: 0;
+    padding: 3.2rem;
+  }
+  .cards__paragraph {
+    margin: 0.6rem 0 4rem;
+  }
+  .cards__icon {
+    width: 64px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
