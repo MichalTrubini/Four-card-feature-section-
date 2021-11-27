@@ -3,7 +3,7 @@
 body {
   background:$background-body;
   font-family:'Poppins',sans-serif;
-  font-size:1.5rem;
+  text-align: center
 }
 
 .main {
@@ -11,8 +11,40 @@ body {
   @include flexCenter(column);
 
   margin:auto;
-  max-width:34rem;
+  max-width:37.5rem;
+  width: 100%;
+  padding:8.5rem 3.2rem 7.8rem;
   
+}
+
+.intro {
+
+  margin-bottom:7.6rem;
+
+  &__heading {
+    color:$color-heading;
+    font-size:2.4rem;
+    font-weight:200;
+    line-height: 3.6rem;
+  }
+
+  &__subheading {
+    color:$color-heading;
+    font-size:2.4rem;
+    font-weight:600;
+    line-height: 3.6rem;
+    letter-spacing: 0.17px;
+  }
+
+  &__paragraph {
+    color:#4D4F62;
+    font-size: 1.5rem;
+    font-weight:400;
+    line-height:2.5rem;
+    letter-spacing: 0.1px;
+    opacity: 0.5;
+    margin-top:1.6rem;
+  }
 }
 
 .cards {
@@ -20,93 +52,80 @@ body {
   @include flexCenter(column);
 
   width:100%;
+  text-align: left;
 
-  &__column {
-    width:100%;
-  }
-}
-
-.card-container {
-  background:$background-card;
-  border-radius:1rem;
-  box-shadow: 1px 1px 10px $color-text;
-  margin-bottom:2rem;
-  overflow: hidden;
-  width:34rem;
-}
-
-.card {
+  &__card {
   
-  display:flex;
-  flex-direction: column;
-  padding:2rem 3rem 3rem 3rem;
-  max-width:34rem;
+    display:flex;
+    flex-direction: column;
+    padding:2.7rem 2.8rem 2.8rem 2.8rem;
+    background:$background-card;
+    box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+    border-radius: 8px;
+    margin-bottom:2.5rem;
+  }
 
   &__heading {
     color:$color-heading;
     font-size:2rem;
     font-weight:600;
+    line-height: 3rem;
   }
 
   &__icon {
     align-self: flex-end;
+    width: 57px;
   }
 
   &__paragraph {
-    color:$color-text;
+    color:#4D4F62;
+    opacity: 0.5;
     font-size:1.3rem;
     font-weight: 400;
     line-height: 2.3rem;
-    margin-top:0.5rem;
-    margin-bottom:3.5rem;
+    margin-top:0.1rem;
+    margin-bottom:3.3rem;
+  }
+
+  &__card-one {
+    border-top:3.55px solid $border-one;
+  }
+  
+  &__card-two {
+    border-top:3.55px solid $border-two;
+  }
+  
+  &__card-three {
+    border-top:3.55px solid $border-three;
+  }
+  
+  &__card-four {
+    border-top:3.55px solid $border-four;
   }
 }
 
-.card-one {
-  border-top:5px solid $border-one;
-}
-
-.card-two {
-  border-top:5px solid $border-two;
-}
-
-.card-three {
-  border-top:5px solid $border-three;
-}
-
-.card-four {
-  border-top:5px solid $border-four;
-}
-
-.content {
-
-  padding:8rem 0;
-  text-align:center;
-
-  &__heading {
-    color:$color-heading;
-    font-size:2.7rem;
-    font-weight:200;
-  }
-
-  &__subheading {
-    color:$color-heading;
-    font-size:2.7rem;
-    font-weight:600;
-  }
-
-  &__paragraph {
-    color:$color-text;
-    font-weight:400;
-    line-height:2.5rem;
-    padding-top:3rem;
-  }
-}
-
-@media (min-width:1000px) {
+@media (min-width:1170px) {
 
   .main {
     max-width:144.7rem;
+  }
+
+  .intro {
+    width: 54rem;
+    margin-bottom:6.4rem;
+
+    &__heading, &__subheading {
+      font-size:3.6rem;
+      line-height: 5.4rem;
+    }
+
+    &__heading {
+      margin-bottom:0.2rem;
+    }
+
+    &__paragraph {
+      margin-top:1.3rem;
+    }
   }
 
   .cards {
@@ -121,14 +140,6 @@ body {
       &__column:nth-child(2) {
         align-items: center;
       }
-  }
-
-  .content {
-
-    &__paragraph {
-      margin:auto;
-      width:70%;
-    }
   }
 
   .pull-right {
