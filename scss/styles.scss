@@ -1,0 +1,138 @@
+@import 'init','variables';
+
+body {
+  background:$background-body;
+  font-family:'Poppins',sans-serif;
+  font-size:1.5rem;
+}
+
+.main {
+
+  @include flexCenter(column);
+
+  margin:auto;
+  max-width:34rem;
+  
+}
+
+.cards {
+
+  @include flexCenter(column);
+
+  width:100%;
+
+  &__column {
+    width:100%;
+  }
+}
+
+.card-container {
+  background:$background-card;
+  border-radius:1rem;
+  box-shadow: 1px 1px 10px $color-text;
+  margin-bottom:2rem;
+  overflow: hidden;
+  width:34rem;
+}
+
+.card {
+  
+  display:flex;
+  flex-direction: column;
+  padding:2rem 3rem 3rem 3rem;
+  max-width:34rem;
+
+  &__heading {
+    color:$color-heading;
+    font-size:2rem;
+    font-weight:600;
+  }
+
+  &__icon {
+    align-self: flex-end;
+  }
+
+  &__paragraph {
+    color:$color-text;
+    font-size:1.3rem;
+    font-weight: 400;
+    line-height: 2.3rem;
+    margin-top:0.5rem;
+    margin-bottom:3.5rem;
+  }
+}
+
+.card-one {
+  border-top:5px solid $border-one;
+}
+
+.card-two {
+  border-top:5px solid $border-two;
+}
+
+.card-three {
+  border-top:5px solid $border-three;
+}
+
+.card-four {
+  border-top:5px solid $border-four;
+}
+
+.content {
+
+  padding:8rem 0;
+  text-align:center;
+
+  &__heading {
+    color:$color-heading;
+    font-size:2.7rem;
+    font-weight:200;
+  }
+
+  &__subheading {
+    color:$color-heading;
+    font-size:2.7rem;
+    font-weight:600;
+  }
+
+  &__paragraph {
+    color:$color-text;
+    font-weight:400;
+    line-height:2.5rem;
+    padding-top:3rem;
+  }
+}
+
+@media (min-width:1000px) {
+
+  .main {
+    max-width:144.7rem;
+  }
+
+  .cards {
+    @include flexCenter(row);
+      
+      &__column {
+        display:flex;
+        flex-direction: column;
+        max-width:30%;
+      }
+
+      &__column:nth-child(2) {
+        align-items: center;
+      }
+  }
+
+  .content {
+
+    &__paragraph {
+      margin:auto;
+      width:70%;
+    }
+  }
+
+  .pull-right {
+    align-self: flex-end;
+  }
+
+}
